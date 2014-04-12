@@ -11,7 +11,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(:version => 20140130061247) do
+=======
+ActiveRecord::Schema.define(:version => 20140302233900) do
+
+  create_table "static_pages", :force => true do |t|
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+>>>>>>> 50d47057dd96b7af58939d6e12e47285a04fbe22
 
   create_table "users", :force => true do |t|
     t.string   "f_name",          :null => false

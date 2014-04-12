@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 Zenpay::Application.configure do
+=======
+Portfolio::Application.configure do
+>>>>>>> 50d47057dd96b7af58939d6e12e47285a04fbe22
   # Settings specified here will take precedence over those in config/application.rb
 
   # Code is not reloaded between requests
@@ -64,6 +68,7 @@ Zenpay::Application.configure do
   # Log the query plan for queries taking more than this (works
   # with SQLite, MySQL, and PostgreSQL)
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
+<<<<<<< HEAD
   
   config.after_initialize do
     ActiveMerchant::Billing::Base.mode = :production
@@ -73,4 +78,6 @@ Zenpay::Application.configure do
       :signature => "AGjv6SW.mTiKxtkm6L9DcSUCUgePAUDQ3L-kTdszkPG8mRfjaRZDYtSu"
     )
   end
+=======
+>>>>>>> 50d47057dd96b7af58939d6e12e47285a04fbe22
 end

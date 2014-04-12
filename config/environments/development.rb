@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 Zenpay::Application.configure do
+=======
+Portfolio::Application.configure do
+>>>>>>> 50d47057dd96b7af58939d6e12e47285a04fbe22
   # Settings specified here will take precedence over those in config/application.rb
 
   # In the development environment your application's code is reloaded on
@@ -34,6 +38,7 @@ Zenpay::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+<<<<<<< HEAD
   
   config.after_initialize do
     ActiveMerchant::Billing::Base.mode = :test
@@ -43,4 +48,6 @@ Zenpay::Application.configure do
       :signature => "AGjv6SW.mTiKxtkm6L9DcSUCUgePAUDQ3L-kTdszkPG8mRfjaRZDYtSu"
     )
   end
+=======
+>>>>>>> 50d47057dd96b7af58939d6e12e47285a04fbe22
 end

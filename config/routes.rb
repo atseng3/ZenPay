@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Zenpay::Application.routes.draw do
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -55,4 +56,11 @@ Zenpay::Application.routes.draw do
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id))(.:format)'
+=======
+Portfolio::Application.routes.draw do
+  resources :static_pages
+  resources :users, :only => [:create, :new, :show, :index, :edit, :update]
+  resource :session, :only => [:create, :destroy, :new]
+  root :to => "static_pages#index"
+>>>>>>> 50d47057dd96b7af58939d6e12e47285a04fbe22
 end

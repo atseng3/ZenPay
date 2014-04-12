@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 Zenpay::Application.configure do
+=======
+Portfolio::Application.configure do
+>>>>>>> 50d47057dd96b7af58939d6e12e47285a04fbe22
   # Settings specified here will take precedence over those in config/application.rb
 
   # The test environment is used exclusively to run your application's
@@ -34,9 +38,12 @@ Zenpay::Application.configure do
 
   # Print deprecation notices to the stderr
   config.active_support.deprecation = :stderr
+<<<<<<< HEAD
 
   config.after_initialize do
     ActiveMerchant::Billing::Base.mode = :test
     ::GATEWAY = ActiveMerchant::Billing::BogusGateway.new
   end
+=======
+>>>>>>> 50d47057dd96b7af58939d6e12e47285a04fbe22
 end

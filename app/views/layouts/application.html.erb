@@ -1,14 +1,149 @@
 <!DOCTYPE html>
 <html>
 <head>
+<<<<<<< HEAD
   <title>Zenpay</title>
+=======
+  <title>Portfolio</title>
+>>>>>>> 50d47057dd96b7af58939d6e12e47285a04fbe22
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+<<<<<<< HEAD
 
 <%= yield %>
 
+=======
+	<nav class="navbar navbar-inverse" role="navigation">
+	  <div class="container-fluid">
+	    <!-- Brand and toggle get grouped for better mobile display -->
+	    <div class="navbar-header">
+	      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+	        <span class="sr-only">Toggle navigation</span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	      </button>
+	      <a class="navbar-brand" href="#">Zenpay</a>
+	    </div>
+
+	    <!-- Collect the nav links, forms, and other content for toggling -->
+	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+	      <form class="navbar-form navbar-left" role="search">
+	        <div class="form-group">
+	          <input type="text" class="form-control" placeholder="Search">
+	        </div>
+	      </form>
+			<ul class="nav navbar-nav pull-right">
+				<li class="btn btn-navbar">
+					<% if !current_user.nil? %>
+						<!-- <li style="margin-top: 5px; width: 30px; height: 30px; box-shadow: 0 0 2px #999;"><%= image_tag current_user.profile_photo.url(:small) %></li> -->
+						<li class="dropdown">
+							<a class="dropdown-toggle" data-toggle="dropdown" href="/"><%= current_user.f_name + " " + current_user.l_name %><span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><%= link_to "Profile", user_url(current_user)%></li>
+								<!-- <li><%= link_to "My Trips", static_pages_url %></li> -->
+								<li><%= link_to "Logout", session_url, :method => :delete %></li>
+							</ul>
+						</li>
+					<% else %>
+						<li data-toggle="tooltip" title="Sign Up!"><a href="#" class="signup-link" data-toggle="modal" data-target=".signup-modal">Sign Up</a></li>
+						<li data-toggle="tooltip" title="Log In with Demo Account!"><a href="#" class="login-link" data-toggle="modal" data-target=".login-modal">Log In</a></li>
+					<% end %>
+					<li><%= link_to "Help", "#"%></li>
+				</li>
+			</ul>
+	    </div><!-- /.navbar-collapse -->
+	  </div><!-- /.container-fluid -->
+	</nav>
+
+	<% if !flash.empty? %>
+		<% flash.each do |k, v| %>
+		<div class="alert alert-<%= k %> fade in">
+		  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+			<% if k == :danger %>
+				<h4>Oops! Something went wrong!</h4>
+			<% else %>
+			  <h4><%= k %></h4>
+			<% end %>
+			<p>
+					<%= v[0] %><br>
+		  </p>
+		</div>
+		<% end %>
+	<% end %>
+<%= yield %>
+
+<div class="modal fade signup-modal" tabindex="-1" role="dialog" aria-labelledby="mySignupModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title">Sign Up</h4>
+        </div>
+		<form role="form" class="signup-form" action="<%= users_url %>" method="post">
+		  <input
+		     name="authenticity_token"
+		     type="hidden"
+		     value="<%= form_authenticity_token %>">
+			 
+	        <div class="modal-body">
+  			  <div class="form-group">
+  			    <input type="text" class="form-control" id="first_name" name="user[f_name]" placeholder="First Name">
+  			  </div>
+			  <div class="form-group">
+			    <input type="text" class="form-control" id="last_name" name="user[l_name]" placeholder="Last Name">
+			  </div>
+			  <div class="form-group">
+			    <input type="email" class="form-control" id="email" name="user[email]" placeholder="Email Address">
+			  </div>
+			  <div class="form-group">
+			    <input type="password" class="form-control" id="password" name="user[password]" placeholder="Password">
+			  </div>
+			  <!-- <div class="form-group">
+			    <input type="password" class="form-control" id="password-confirmation" placeholder="Password Confirmation">
+			  </div> -->
+	        </div>
+	        <div class="modal-footer">
+	          <button type="submit" class="btn btn-primary">Sign Up</button>
+	        </div>
+		</form>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade login-modal" tabindex="-1" role="dialog" aria-labelledby="myLoginModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title">Log In</h4>
+        </div>
+		<form role="form" class="login-form" action="<%= session_url %>" method="post">
+		  <input
+		     name="authenticity_token"
+		     type="hidden"
+		     value="<%= form_authenticity_token %>">
+			 
+	        <div class="modal-body">
+			  <div class="form-group">
+			    <input type="email" class="form-control" id="email" name="user[name]" placeholder="Email Address">
+			  </div>
+			  <div class="form-group">
+			    <input type="password" class="form-control" id="password" name="user[password]" placeholder="Password">
+			  </div>
+	        </div>
+	        <div class="modal-footer">
+	          <button type="submit" class="btn btn-primary">Log In</button>
+	        </div>
+		</form>
+    </div>
+    </div>
+  </div>
+</div>
+
+>>>>>>> 50d47057dd96b7af58939d6e12e47285a04fbe22
 </body>
 </html>

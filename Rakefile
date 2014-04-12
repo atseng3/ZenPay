@@ -4,4 +4,8 @@
 
 require File.expand_path('../config/application', __FILE__)
 
+<<<<<<< HEAD
 Zenpay::Application.load_tasks
+=======
+Portfolio::Application.load_tasks
+>>>>>>> 50d47057dd96b7af58939d6e12e47285a04fbe22
