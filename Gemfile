@@ -15,6 +15,7 @@ group :development do
 end
 
 gem 'sqlite3'
+gem 'activemerchant'
 
 gem 'meta_request'
 gem 'bootstrap-sass'
